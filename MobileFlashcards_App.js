@@ -14,18 +14,35 @@ import {
   DeckStateContext,
 } from "./contextProvider/cardDeckContextProvider";
 
-import { setLocalNotification } from "./utils/localNotifications";
-
 //Tab Navigation
-const MainBottomTabNav = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   //on init, load stored deckstate
   useEffect(() => {
     console.log("In use Effect..");
     loadDeckState();
-    //ask user for permission for local notifications
-    setLocalNotification();
+    // dispatchDeckAction(actionCreators.addDeck("Solarsystem", "sky"));
+    // dispatchDeckAction(
+    //   actionCreators.addCard(
+    //     "Solarsystem",
+    //     "How many planets has our solar system?",
+    //     "8"
+    //   )
+    // );
+    // dispatchDeckAction(
+    //   actionCreators.addCard(
+    //     "Solarsystem",
+    //     "What are the planets of our solar system?",
+    //     "Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune"
+    //   )
+    // );
+    // dispatchDeckAction(actionCreators.addDeck("Deck2", "sky"));
+    // dispatchDeckAction(actionCreators.addCard("Deck2", "Q_D2_1", "A_D2_1"));
+    // dispatchDeckAction(actionCreators.addCard("Deck2", "Q_D2_2", "A_D2_2"));
+    // dispatchDeckAction(actionCreators.addDeck("Deck3", "sky"));
+
+    //dispatchDeckAction(actionCreators.removeDeck("Deck2"));
   }, []);
 
   //store new deckstate after each change
@@ -73,7 +90,7 @@ export default function App() {
     <DispatchContext.Provider value={dispatchDeckAction}>
       <DeckStateContext.Provider value={deckstate}>
         <NavigationContainer>
-          <MainBottomTabNav.Navigator
+          <Tab.Navigator
             tabBarOptions={{
               activeTintColor: "tomato",
               inactiveTintColor: "gray",
@@ -100,9 +117,9 @@ export default function App() {
               },
             })}
           >
-            <MainBottomTabNav.Screen name="Decks" component={DecksView} />
-            <MainBottomTabNav.Screen name="AddDeck" component={AddDeckView} />
-          </MainBottomTabNav.Navigator>
+            <Tab.Screen name="Decks" component={DecksView} />
+            <Tab.Screen name="AddDeck" component={AddDeckView} />
+          </Tab.Navigator>
         </NavigationContainer>
       </DeckStateContext.Provider>
     </DispatchContext.Provider>
