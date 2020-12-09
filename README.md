@@ -1,4 +1,22 @@
-# My Universal React Project
+# Mobile Flashcards
+
+This is the project submission for the final assessment project for Udacity's React Native course.
+
+Content of the project is an application that helps you to memorize facts by providing a mobile version of good old flash cards.
+Add cards with questions and answers, organize your cards in decks and test your knowledge by taking a quiz on a certain deck.
+Practice makes perfect, so if the user has'nt taken a quiz that day so far, the app notifies the user every day at 6 pm to take his daily quiz.
+
+# Mobile Flashcards
+
+The project was set up using create-react-native-app https://reactnative.dev/blog/2017/03/13/introducing-create-react-native-app.
+The application is implemented using functional components, hooks, navigation V5 and uses useReducer, useContext and AsyncStorage for state management and persistance.
+The project has been tested with the iOS emulator.
+
+## Student
+
+Anna Magdalena Blöckner
+
+# Instructions given by project template Universal React Project
 
 <p>
   <!-- iOS -->
@@ -42,3 +60,4 @@ This project can be run from a web browser or the Expo client app. You may find 
 - Learn more about [Universal React](https://docs.expo.io/).
 - See what API and components are [available in the React runtimes](https://docs.expo.io/versions/latest/).
 - Find out more about developing apps and websites: [Guides](https://docs.expo.io/guides/).
+# UdacityReactND_P3_ReactNative_mobileFlashCards
